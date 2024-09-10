@@ -2,3 +2,13 @@
 .DS_Store
 .idea
 *.iml
+*/*.iml
+*.svn*
+target
+*.log
+logs
+*/*.project
+*/*.classpath
+*/*.settings
+*.ipr
+*.iws
