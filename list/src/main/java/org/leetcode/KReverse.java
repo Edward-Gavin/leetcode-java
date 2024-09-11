@@ -5,8 +5,7 @@ package org.leetcode;
  * @Date: 2024/9/10 14:36
  */
 public class KReverse {
-    public static ListNode kReserve(ListNode head, int k) {
-
+    public static ListNode reverseKGroup(ListNode head, int k) {
         if (head == null || k == 1){
             return head;
         }
@@ -20,14 +19,13 @@ public class KReverse {
         while (end != null) {
             count++;
             if (count % k == 0) {
-                start = reverse(start, end.next);
+                start = reverse(start, end);
                 end = start.next;
             } else {
                 end = end.next;
             }
         }
         return dummy.next;
-
     }
 
     public static ListNode reverse(ListNode start, ListNode end){
@@ -36,8 +34,8 @@ public class KReverse {
         ListNode first = cur;
 
         while (cur != end) {
-            ListNode temp = start.next;
-            start.next = pre;
+            ListNode temp = cur.next;
+            cur.next = pre;
             pre = cur;
             cur = temp;
         }
@@ -66,10 +64,16 @@ public class KReverse {
     }
 
     public static void main(String[] args) {
-        ListNode l3 = new ListNode(3, null);
+        ListNode l9 = new ListNode(9, null);
+        ListNode l8 = new ListNode(8, l9);
+        ListNode l7 = new ListNode(7, l8);
+        ListNode l6 = new ListNode(6, l7);
+        ListNode l5 = new ListNode(5, l6);
+        ListNode l4 = new ListNode(4, l5);
+        ListNode l3 = new ListNode(3, l4);
         ListNode l2 = new ListNode(2, l3);
         ListNode l1 = new ListNode(1, l2);
-        ListNode reverse = reverse(l1);
+        ListNode reverse = reverseKGroup(l1, 3);
         while (reverse != null) {
             System.out.println(reverse.val);
             reverse = reverse.next;
