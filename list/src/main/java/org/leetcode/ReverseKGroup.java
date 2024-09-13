@@ -6,13 +6,11 @@ package org.leetcode;
  */
 public class ReverseKGroup {
     public static ListNode reverseKGroup(ListNode head, int k) {
-        if (head == null || k == 1){
+        if (head == null || k == 1) {
             return head;
         }
 
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-
+        ListNode dummy = new ListNode(-1, head);
         ListNode start = dummy;
         ListNode end = head;
         int count = 0;
@@ -28,7 +26,7 @@ public class ReverseKGroup {
         return dummy.next;
     }
 
-    public static ListNode reverse(ListNode start, ListNode end){
+    public static ListNode reverse(ListNode start, ListNode end) {
         ListNode cur = start.next;
         ListNode pre = start;
         ListNode first = cur;
