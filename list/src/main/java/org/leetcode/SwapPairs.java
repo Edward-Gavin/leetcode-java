@@ -18,7 +18,6 @@ public class SwapPairs {
             ListNode node1 = cur.next;
             ListNode node2 = cur.next.next;
 
-
             // 从后往前穿
             node1.next = node2.next;
             node2.next = node1;
