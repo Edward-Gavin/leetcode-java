@@ -1,4 +1,6 @@
-package org.leetcode;
+package org.leetcode.hard;
+
+import org.leetcode.ListNode;
 
 /**
  * @Author: shiwei10
@@ -17,7 +19,7 @@ public class ReverseKGroup {
         while (end != null) {
             count++;
             if (count % k == 0) {
-                start = reverse(start, end);
+                start = reverse(start, end.next);
                 end = start.next;
             } else {
                 end = end.next;
@@ -54,7 +56,7 @@ public class ReverseKGroup {
         ListNode l3 = new ListNode(3, l4);
         ListNode l2 = new ListNode(2, l3);
         ListNode l1 = new ListNode(1, l2);
-        ListNode reverse = reverseKGroup(l1, 3);
+        ListNode reverse = reverseKGroup(l1, 2);
         while (reverse != null) {
             System.out.println(reverse.val);
             reverse = reverse.next;
