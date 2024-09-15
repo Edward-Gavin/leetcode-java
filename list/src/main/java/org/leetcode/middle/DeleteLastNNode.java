@@ -1,4 +1,6 @@
-package org.leetcode;
+package org.leetcode.middle;
+
+import org.leetcode.ListNode;
 
 /**
  * @Author: shiwei10
