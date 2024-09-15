@@ -37,12 +37,8 @@ public class ReverseKGroupV2 {
             end = start;
 
         }
-
-
         return dummy.next;
     }
-
-
 
     public static ListNode reverse(ListNode head) {
         ListNode last = null;
@@ -57,8 +53,4 @@ public class ReverseKGroupV2 {
         }
         return last;
     }
-
-
-
-
 }
