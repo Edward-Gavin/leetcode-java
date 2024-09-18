@@ -1,4 +1,4 @@
-package com.leetcode.hash;
+package com.leetcode.middle;
 
 /**
  * @Author: shiwei10
