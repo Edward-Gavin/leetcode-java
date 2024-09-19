@@ -1,4 +1,4 @@
-package com.leetcode.string;
+package com.leetcode.middle;
 
 /**
  * https://leetcode-cn.com/problems/implement-strstr/solution/sundaysuan-fa-shi-xian-by-cheungq-6-ikp7/

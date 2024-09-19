@@ -1,4 +1,4 @@
-package com.leetcode.string;
+package com.leetcode.hard;
 
 import java.util.Iterator;
 import java.util.Random;

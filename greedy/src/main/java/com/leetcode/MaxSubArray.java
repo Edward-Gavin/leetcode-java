@@ -1,4 +1,4 @@
-package com.leetcode.greedy;
+package com.leetcode;
 
 /**
  * @Author: shiwei10

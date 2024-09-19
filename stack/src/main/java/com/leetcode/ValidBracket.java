@@ -1,4 +1,4 @@
-package com.leetcode.stack;
+package com.leetcode;
 
 import java.util.Arrays;
 import java.util.List;
