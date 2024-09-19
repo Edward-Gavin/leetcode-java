@@ -1,9 +1,8 @@
-package com.leetcode.double_pointer;
+package com.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * @Author: shiwei10
@@ -37,6 +36,9 @@ public class ThreeNumberSum {
                     while (left < right && input[left] == input[left + 1]) {
                         left++;
                     }
+
+                    left ++;
+                    right --;
                 } else if (input[i] + input[left] + input[right] < 0) {
                     left++;
                 } else {
@@ -49,10 +51,13 @@ public class ThreeNumberSum {
 
 
     public static void main(String[] args) {
-        ArrayList<Object> temp = new ArrayList<>();
-        temp.add(Integer.parseInt("129"));
-        temp.add(Long.parseLong("129"));
-        temp.add(Double.parseDouble("129"));
-        System.out.println(temp);
+
+        int[] input = new int[]{-1,0,1,2,-1,-4};
+        ThreeNumberSum threeNumberSum = new ThreeNumberSum();
+        List<List<Integer>> result = ThreeNumberSum.getResult(input);
+        for (List<Integer> list : result) {
+            System.out.println(list);
+        }
+
     }
 }
