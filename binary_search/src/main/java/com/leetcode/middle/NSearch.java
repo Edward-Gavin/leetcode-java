@@ -3,6 +3,7 @@ package com.leetcode.middle;
 /**
  * @Author: shiwei10
  * @Date: 2024/9/19 19:44
+ * @Description: 33. 搜索旋转排序数组
  */
 public class NSearch {
     public int search(int[] nums, int target) {
