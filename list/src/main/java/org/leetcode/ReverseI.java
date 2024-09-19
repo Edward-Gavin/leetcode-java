@@ -11,7 +11,6 @@ public class ReverseI {
         ListNode nextNode = null;
         ListNode temp;
 
-
         while (curNode != null) {
             temp = curNode.next;
             curNode.next = nextNode;
