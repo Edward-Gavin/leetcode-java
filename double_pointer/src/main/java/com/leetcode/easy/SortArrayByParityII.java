@@ -23,8 +23,9 @@ public class SortArrayByParityII {
 
         int odd = 0;
         int even = 1;
-
         int last = length - 1;
+
+        boolean evenJudge = (nums[length-1] & 1) == 1;
 
         while (odd < length && even < length) {
 
