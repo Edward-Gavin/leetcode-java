@@ -1,6 +1,9 @@
 package com.leetcode.middle;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author: shiwei10
@@ -8,6 +11,9 @@ import java.util.Arrays;
  * @Description: 881 救生艇
  */
 public class NumRescueBoat {
+
+
+
     public static int numRescueBoat(int[] nums, int limit) {
 
         if (nums.length == 0) {
@@ -27,6 +33,37 @@ public class NumRescueBoat {
             }
             right--;
             res++;
+        }
+
+        return res;
+    }
+
+
+    public static void splitOddEven(int[] nums) {
+
+        List<Integer> odd = new ArrayList<>();
+        List<Integer> even = new ArrayList<>();
+
+        for (int num : nums) {
+            if (num % 2 == 0) {
+                odd.add(num);
+            } else {
+                even.add(num);
+            }
+        }
+
+        int[] oddArray = listToArray(odd);
+        int[] evenArray = listToArray(even);
+
+    }
+
+    public static int[] listToArray(List list) {
+
+        int size = list.size();
+        int[] res = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            res[i] = list.indexOf(i);
         }
 
         return res;
