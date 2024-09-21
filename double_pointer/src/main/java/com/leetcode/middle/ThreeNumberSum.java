@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.middle;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,13 +51,11 @@ public class ThreeNumberSum {
 
 
     public static void main(String[] args) {
-
         int[] input = new int[]{-1,0,1,2,-1,-4};
         ThreeNumberSum threeNumberSum = new ThreeNumberSum();
         List<List<Integer>> result = ThreeNumberSum.getResult(input);
         for (List<Integer> list : result) {
             System.out.println(list);
         }
-
     }
 }
