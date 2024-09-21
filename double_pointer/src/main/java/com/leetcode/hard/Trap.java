@@ -3,13 +3,43 @@ package com.leetcode.hard;
 /**
  * @author: shiwei10
  * @create: 2024-09-21 15:09
+ * @Description: 42. 接雨水
  */
 public class Trap {
 
-    public int trap(int[] height) {
+    public static int trap(int[] height) {
+
+        int length = height.length;
+
+        int res = 0;
+
+        int[] lMax = new int[length];
+        lMax[0] = height[0];
 
 
+        int[] rMax = new int[length];
+        rMax[length - 1] = height[length - 1];
 
-        return 1;
+        for (int i = 1; i < length; i++) {
+            lMax[i] = Math.max(lMax[i-1], height[i]);
+        }
+
+        for (int i = length - 2; i >= 0; i--) {
+            rMax[i] = Math.max(rMax[i+1], height[i]);
+        }
+
+        for (int i = 0; i < length; i++) {
+            res += Math.max(Math.min(lMax[i], rMax[i]) - height[i], 0);
+        }
+
+        return res;
+    }
+
+    public static void main(String[] args) {
+
+
+        int[] ints = new int[]{4,2,0,3,2,5};
+        int temp = trap(ints);
+        System.out.println(temp);
     }
 }
