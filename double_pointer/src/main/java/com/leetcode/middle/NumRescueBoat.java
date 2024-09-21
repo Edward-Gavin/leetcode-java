@@ -2,7 +2,6 @@ package com.leetcode.middle;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,8 +10,6 @@ import java.util.List;
  * @Description: 881 救生艇
  */
 public class NumRescueBoat {
-
-
 
     public static int numRescueBoat(int[] nums, int limit) {
 
