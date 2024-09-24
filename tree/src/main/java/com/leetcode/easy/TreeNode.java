@@ -21,12 +21,5 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
-
-    public static void main(String[] args) {
-        long a = Long.MAX_VALUE;
-        double pow = Math.pow(2, 44);
-        long v = a / (long) pow;
-        System.out.println(v);
-    }
 }
 
