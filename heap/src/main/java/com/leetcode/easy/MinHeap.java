@@ -51,7 +51,6 @@ public class MinHeap {
         MinHeap minHeap = new MinHeap(array);
         System.out.println(minHeap);
 
-
         int parent = (4 - 1) >>> 1;
     }
 }
