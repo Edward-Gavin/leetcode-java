@@ -10,52 +10,48 @@ public class MinHeap {
     private int size;
 
     public MinHeap(int[] array) {
-
-
+        heap = array;
+        size = array.length;
+        build();
     }
 
-    public static void minHeap(int[] array, int index) {
-
-
-
-    }
-
-    public static void insert(int[] array, int size, int index) {
-
+    public void build() {
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            heapify(heap, i, size);
+        }
     }
 
     public static void heapify(int[] array, int index, int size) {
 
+        int min = index;
         int left = 2 * index + 1;
         int right = 2 * index + 2;
 
-        int biggest = index;
-
-        if (left < size && array[left] > array[biggest]) {
-            biggest = left;
+        if (left < size && array[left] < array[min]) {
+            min = left;
         }
-        if (right < size && array[right] > array[biggest]) {
-            biggest = right;
+        if (right < size && array[right] < array[min]) {
+            min = right;
         }
 
-        if (biggest != index) {
-            swap(array, index, biggest);
-            heapify(array, biggest, size);
+        if (min != index) {
+            swap(array, index, min);
+            heapify(array, min, size);
         }
-
     }
-
-    public static void heapSort(int[] array) {
-
-
-    }
-
-
-
 
     public static void swap(int[] array, int left, int right) {
         int temp = array[right];
         array[right] = array[left];
         array[left] = temp;
+    }
+
+    public static void main(String[] args) {
+        int[] array = new int[]{1, 5, 3, 9, 7, 6, 4, 11, 2, 10, 8};
+        MinHeap minHeap = new MinHeap(array);
+        System.out.println(minHeap);
+
+
+        int parent = (4 - 1) >>> 1;
     }
 }

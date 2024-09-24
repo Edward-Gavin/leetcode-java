@@ -49,6 +49,8 @@ public class MaxHeap {
     }
 
     public void insert(int element){
+
+        // TODO 扩容，新创建一个数组，将源数组拷贝到新数组中
         heap[size] = element;
         size++;
 
@@ -63,5 +65,6 @@ public class MaxHeap {
     public static void main(String[] args) {
         int[] array = new int[]{1, 5, 3, 9, 7, 6, 4, 11, 2, 10, 8};
         MaxHeap maxHeap = new MaxHeap(array);
+        maxHeap.insert(12);
     }
 }
