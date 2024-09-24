@@ -26,6 +26,17 @@ public class Traversal {
         postorderTraversal(root.right, result);
     }
 
+    public static void inorderTraversal(TreeNode root, LinkedList<Integer> result) {
+
+        if (root == null) {
+            return ;
+        }
+
+        inorderTraversal(root.left, result);
+        result.add(root.val);
+        inorderTraversal(root.right, result);
+    }
+
     public static void main(String[] args) {
         LinkedList<Integer> result = new LinkedList<>();
         TreeNode root = new TreeNode();

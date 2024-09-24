@@ -30,7 +30,6 @@ public class MedianFinder {
     }
 
     public double findMedian() {
-
         if (queMin.size() > queMax.size()) {
             return queMin.peek();
         }

@@ -63,6 +63,5 @@ public class MaxHeap {
     public static void main(String[] args) {
         int[] array = new int[]{1, 5, 3, 9, 7, 6, 4, 11, 2, 10, 8};
         MaxHeap maxHeap = new MaxHeap(array);
-
     }
 }
