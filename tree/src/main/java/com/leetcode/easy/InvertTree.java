@@ -1,5 +1,7 @@
 package com.leetcode.easy;
 
+import com.leetcode.TreeNode;
+
 /**
  * @Author: shiwei10
  * @Date: 2024/9/24 20:12

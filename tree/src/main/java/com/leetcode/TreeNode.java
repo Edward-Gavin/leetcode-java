@@ -1,15 +1,15 @@
-package com.leetcode.easy;
+package com.leetcode;
 
 /**
  * @Author: shiwei10
  * @Date: 2024/5/7 19:51
  */
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
 
-    TreeNode() {
+    public TreeNode() {
     }
 
     TreeNode(int val) {
