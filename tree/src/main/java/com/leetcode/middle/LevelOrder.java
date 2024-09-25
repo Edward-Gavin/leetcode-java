@@ -32,6 +32,7 @@ public class LevelOrder {
                     TreeNode cur = queue[left];
                     left++;
                     list.add(cur.val);
+
                     if (cur.left != null) {
                         queue[right] = cur.left;
                         right++;
@@ -45,7 +46,6 @@ public class LevelOrder {
                 res.add(list);
             }
         }
-
         return res;
     }
 }
