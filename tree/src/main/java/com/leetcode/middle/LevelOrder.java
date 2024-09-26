@@ -3,7 +3,9 @@ package com.leetcode.middle;
 import com.leetcode.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * @Author: shiwei10
@@ -45,6 +47,43 @@ public class LevelOrder {
                 }
                 res.add(list);
             }
+        }
+        return res;
+    }
+
+    /**
+     * 使用队列存储当前层的节点，然后依次遍历，将下一层的节点加入到队列中
+     * @param root 根
+     * @return 按层返回的二维list
+     */
+    public List<List<Integer>> levelOrderV2(TreeNode root) {
+
+        List<List<Integer>> res = new ArrayList<>();
+
+        if (root == null) {
+            return res;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            ArrayList<Integer> level = new ArrayList<>();
+
+            for (int i = 0; i < size; i++) {
+                TreeNode poll = queue.poll();
+                level.add(poll.val);
+
+                if (poll.left != null) {
+                    queue.add(poll.left);
+                }
+
+                if (poll.right != null) {
+                    queue.add(poll.right);
+                }
+            }
+            res.add(level);
         }
         return res;
     }
