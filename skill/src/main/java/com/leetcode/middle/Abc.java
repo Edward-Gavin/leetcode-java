@@ -30,6 +30,5 @@ public class Abc {
         int[] input = {3,3,3,3,3};
         Abc abc = new Abc();
         int duplicate = abc.findDuplicate(input);
-
     }
 }
