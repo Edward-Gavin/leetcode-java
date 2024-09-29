@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * @Author: shiwei10
  * @Date: 2024/9/29 15:35
+ * @Description: 118. 杨辉三角
  */
 public class GenerateTriangle {
 
