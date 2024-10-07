@@ -21,7 +21,7 @@ public class CoinChange {
     public static void main(String[] args) {
         int[] coins = {1, 2};
         CoinChange coinChange = new CoinChange();
-        int i = coinChange.coinChangeV3(coins, 4);
+        int i = coinChange.coinChangeV2(coins, 4);
         System.out.println(i);
     }
 
