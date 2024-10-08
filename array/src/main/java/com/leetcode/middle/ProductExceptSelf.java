@@ -3,6 +3,7 @@ package com.leetcode.middle;
 /**
  * @author: shiwei10
  * @create: 2024-10-08 22:37
+ * @description: 238. 除自身以外数组的乘积
  */
 public class ProductExceptSelf {
     public int[] productExceptSelf(int[] nums) {
