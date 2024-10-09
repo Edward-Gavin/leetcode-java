@@ -36,7 +36,5 @@ public class Anagram {
     public static void main(String[] args) {
         String s = "avb";
         System.out.println(s.charAt(0));
-
-
     }
 }
