@@ -45,6 +45,8 @@ public class FirstMissingPositive {
 
         int length = nums.length;
         for (int i = 0; i < length; i++) {
+            // 因为nums[i]会当作索引使用，因此需要限制nums[i]的范围，（0，len]，保证nums[i]-1在 [0, len-1]
+            // 如果 i 位置上的数与 nums[i]-1 位置上的数不同，交换
             while (nums[i] > 0 && nums[i] <= length && nums[i] != nums[nums[i] - 1]) {
                 swap(nums, i, nums[i] - 1);
             }
@@ -63,5 +65,10 @@ public class FirstMissingPositive {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{3, 4, -1, 1};
+        int i = new FirstMissingPositive().firstMissingPositiveV2(nums);
     }
 }
