@@ -72,15 +72,15 @@ public class LevelOrder {
             ArrayList<Integer> level = new ArrayList<>();
 
             for (int i = 0; i < size; i++) {
-                TreeNode poll = queue.poll();
-                level.add(poll.val);
+                TreeNode node = queue.poll();
+                level.add(node.val);
 
-                if (poll.left != null) {
-                    queue.add(poll.left);
+                if (node.left != null) {
+                    queue.add(node.left);
                 }
 
-                if (poll.right != null) {
-                    queue.add(poll.right);
+                if (node.right != null) {
+                    queue.add(node.right);
                 }
             }
             res.add(level);

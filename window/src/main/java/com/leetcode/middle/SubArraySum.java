@@ -12,7 +12,20 @@ import java.util.Map;
 public class SubArraySum {
 
 
-    // 暴力 超时 时间复杂度 O(n^3)
+    public static void main(String[] args) {
+        int[] nums = new int[]{1, 2, 3};
+        int k = 3;
+        int i = new SubArraySum().subarraySumV4(nums, k);
+        System.out.println(i);
+    }
+
+    /**
+     * 暴力 超时 时间复杂度 O(n^3)
+     *
+     * @param nums
+     * @param m
+     * @return
+     */
     public int subarraySum(int[] nums, int m) {
 
         int len = nums.length;
@@ -37,7 +50,11 @@ public class SubArraySum {
         return res;
     }
 
-    // 优化 O(N^2)
+    /**
+     * 优化 O(N^2)
+     *
+     * @return
+     */
     public int subarraySumV2(int[] nums, int m) {
 
         int len = nums.length;
@@ -58,7 +75,13 @@ public class SubArraySum {
         return res;
     }
 
-    // 前缀和数组
+    /**
+     * 前缀和数组
+     *
+     * @param nums
+     * @param m
+     * @return
+     */
     public int subarraySumV3(int[] nums, int m) {
         int len = nums.length;
         int[] preSum = new int[len + 1];
@@ -72,7 +95,7 @@ public class SubArraySum {
         for (int i = 0; i < len; i++) {
             for (int j = i; j < len; j++) {
                 if (preSum[j + 1] - preSum[i] == m) {
-                    res ++;
+                    res++;
                 }
             }
         }
@@ -81,7 +104,13 @@ public class SubArraySum {
     }
 
 
-    // 前缀和 + 哈希表
+    /**
+     * 前缀和 + 哈希表
+     *
+     * @param nums
+     * @param m
+     * @return
+     */
     public int subarraySumV4(int[] nums, int m) {
 
         Map<Integer, Integer> preSum = new HashMap<>();
@@ -94,18 +123,9 @@ public class SubArraySum {
             if (preSum.containsKey(sum - m)) {
                 res += preSum.get(sum - m);
             }
-            preSum.put(sum, preSum.getOrDefault(sum, 0)+1);
+            preSum.put(sum, preSum.getOrDefault(sum, 0) + 1);
         }
 
         return res;
-    }
-
-
-
-    public static void main(String[] args) {
-        int[] nums = new int[]{1, 2, 3};
-        int k = 3;
-        int i = new SubArraySum().subarraySumV4(nums, k);
-        System.out.println(i);
     }
 }
