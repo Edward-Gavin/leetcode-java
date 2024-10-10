@@ -7,6 +7,7 @@ import java.util.PriorityQueue;
 /**
  * @Author: shiwei10
  * @Date: 2024/10/9 20:00
+ * @Description: 239. 滑动窗口最大值
  */
 public class MaxSlidingWindow {
 
@@ -97,7 +98,7 @@ public class MaxSlidingWindow {
         return res;
     }
 
-    // 单调栈
+    // 单调队列
     public int[] maxSlidingWindowV3(int[] nums, int k) {
         LinkedList<Integer> queue = new LinkedList<>();
 
