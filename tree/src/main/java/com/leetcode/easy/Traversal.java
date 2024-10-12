@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class Traversal {
     /**
-     * 先序遍历
+     * 先序遍历 O(n)
      *
      * @param root
      * @param result
@@ -27,10 +27,9 @@ public class Traversal {
 
 
     /**
-     * 迭代法
+     * 迭代法 O(n)
      *
      * @param root
-     * @param res
      */
     public static List<Integer> preOrder(TreeNode root) {
         List<Integer> res = new ArrayList<>();
@@ -141,7 +140,7 @@ public class Traversal {
     }
 
     /**
-     * 层次遍历 dfs
+     * 层次遍历 宽度优先遍历 bfs
      *
      * @param root
      * @return
@@ -158,8 +157,8 @@ public class Traversal {
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-            int size = queue.size();
             List<Integer> level = new ArrayList<>();
+            int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 level.add(node.val);
@@ -178,7 +177,7 @@ public class Traversal {
     }
 
     /**
-     * 深度优先遍历
+     * 深度优先遍历 dfs
      *
      * @param root
      * @return
@@ -195,7 +194,6 @@ public class Traversal {
 
         while (!stack.isEmpty()) {
             TreeNode pop = stack.pop();
-
             res.add(pop.val);
 
             if (pop.right != null) {
