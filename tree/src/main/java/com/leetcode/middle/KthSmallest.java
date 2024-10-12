@@ -58,27 +58,28 @@ public class KthSmallest {
 
         TreeNode temp = root;
 
-
+        // 迭代法中序遍历树
         while (temp != null || !list.isEmpty()) {
             while (temp != null) {
                 list.add(root);
                 temp = temp.left;
             }
 
+            // 处理当前节点
             temp = list.remove(list.size() - 1);
             k--;
             if (k == 0) {
                 return temp.val;
             }
+
+            // 访问右孩子
             temp = temp.right;
         }
-
-
         return -1;
     }
 
     /**
-     * 层次遍历 + 堆
+     * 层次遍历 + 堆 小顶堆
      *
      * @param root
      * @param k

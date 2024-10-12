@@ -123,12 +123,10 @@ public class Traversal {
     }
 
     public List<Integer> inOrder(TreeNode root) {
-
         ArrayList<Integer> res = new ArrayList<>();
         if (root == null) {
             return res;
         }
-
         Stack<TreeNode> stack = new Stack<>();
         while (root != null || !stack.isEmpty()) {
             while (root != null) {
@@ -139,7 +137,6 @@ public class Traversal {
             res.add(root.val);
             root = root.right;
         }
-
         return res;
     }
 
@@ -161,10 +158,8 @@ public class Traversal {
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-
             int size = queue.size();
             List<Integer> level = new ArrayList<>();
-
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 level.add(node.val);

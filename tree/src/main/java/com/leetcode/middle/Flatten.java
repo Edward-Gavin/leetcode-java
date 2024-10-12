@@ -5,6 +5,7 @@ import com.leetcode.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @Author: shiwei10
@@ -54,9 +55,8 @@ public class Flatten {
      * @param root
      */
     public void flattenV2(TreeNode root) {
-        if (root == null) {
+        if (root == null)
             return;
-        }
         preOrderNode(root);
         root.left = null;
         for (int i = 1; i < treeNodesList.size(); i++) {
@@ -87,7 +87,7 @@ public class Flatten {
             return ;
         }
 
-        LinkedList<TreeNode> queue = new LinkedList<>();
+        Stack<TreeNode> queue = new Stack<>();
         queue.add(root);
         TreeNode pre = null;
 
@@ -99,11 +99,15 @@ public class Flatten {
                 pre.right = cur;
             }
 
-            if (cur.right != null) {
-                queue.add(cur.right);
+            // 复制中间节点，到栈中
+            TreeNode left = cur.left;
+            TreeNode right = cur.right;
+
+            if (right != null) {
+                queue.push(right);
             }
-            if (cur.left != null) {
-                queue.add(cur.left);
+            if (left != null) {
+                queue.push(left);
             }
             pre = cur;
         }
