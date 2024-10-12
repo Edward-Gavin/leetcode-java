@@ -5,10 +5,10 @@ import com.leetcode.TreeNode;
 /**
  * @Author: shiwei10
  * @Date: 2024/9/24 20:17
+ * @Description: 101. 对称二叉树
  */
 public class IsSymmetric {
     public boolean isSymmetric(TreeNode root) {
-
         return check(root, root);
     }
 

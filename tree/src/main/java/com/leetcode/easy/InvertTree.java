@@ -5,6 +5,7 @@ import com.leetcode.TreeNode;
 /**
  * @Author: shiwei10
  * @Date: 2024/9/24 20:12
+ * @Description: 226. 翻转二叉树
  */
 public class InvertTree {
 

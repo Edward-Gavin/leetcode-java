@@ -2,10 +2,7 @@ package com.leetcode.easy;
 
 import com.leetcode.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @Author: shiwei10
@@ -62,7 +59,7 @@ public class Traversal {
     }
 
     /**
-     * 中序遍历
+     * 层次遍历 dfs
      * @param root
      * @return
      */
@@ -96,6 +93,33 @@ public class Traversal {
             }
             res.add(level);
         }
+        return res;
+    }
+
+    public static List<Integer> depthOrder(TreeNode root) {
+
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            TreeNode pop = stack.pop();
+
+            res.add(pop.val);
+
+            if (pop.right != null) {
+                stack.push(pop.right);
+            }
+
+            if (pop.left != null) {
+                stack.push(pop.left);
+            }
+        }
+
         return res;
     }
 
