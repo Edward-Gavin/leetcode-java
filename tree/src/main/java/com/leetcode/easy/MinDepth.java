@@ -6,37 +6,33 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * @Author: shiwei10
- * @Date: 2024/9/24 18:04
- * @Description: 104. 二叉树最大深度
+ * @author: shiwei10
+ * @create: 2024-10-13 20:20
+ * @description:
  */
-public class MaxDepth {
-    /**
-     * 后序遍历
-     *
-     * @param root
-     * @return
-     */
-    public int maxDepth(TreeNode root) {
+public class MinDepth {
+
+    public int minDepthDfs(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        //  左子树最大深度
-        int left = maxDepth(root.left);
-        // 右子树最大深度
-        int right = maxDepth(root.right);
-        // 最大深度 +1
-        return Math.max(left, right) + 1;
+
+        int left = minDepthDfs(root.left);
+        int right = minDepthDfs(root.right);
+
+        if (root.left == null || root.right == null) {
+            return left + right + 1;
+        }
+        return Math.min(left, right) + 1;
     }
 
     /**
-     * 层次遍历，求深度
+     * 层次遍历求最小深度
      *
      * @param root
      * @return
      */
-    public int maxDepthOfLevel(TreeNode root) {
-
+    public int minDepth(TreeNode root) {
         int res = 0;
 
         if (root == null) {
@@ -45,6 +41,7 @@ public class MaxDepth {
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
+        res++;
 
         while (!queue.isEmpty()) {
             int size = queue.size();
@@ -58,7 +55,13 @@ public class MaxDepth {
                 if (poll.right != null) {
                     queue.add(poll.right);
                 }
+
+                // 左右都为空的时候，才是最小深度   [2,null,3,null,4,null,5,null,6]
+                if (poll.left == null && poll.right == null) {
+                    return res;
+                }
             }
+
             res++;
         }
         return res;
