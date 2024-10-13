@@ -7,7 +7,7 @@ package com.leetcode.easy;
  */
 public class NumIslands {
 
-    public int numsIslands(char[][] grid) {
+    public int numIslands(char[][] grid) {
         int res = 0;
         int n = grid.length;
         int m = grid[0].length;
@@ -27,7 +27,7 @@ public class NumIslands {
         if (!judge(grid, r, c)) {
             return 0;
         }
-        if (grid[c][r] != '1') {
+        if(grid[r][c] != '1'){
             return 0;
         }
         grid[r][c] = '2';
