@@ -10,29 +10,33 @@ public class KGroupReverse {
 
     public ListNode kReverse(ListNode head, int k) {
         ListNode dummy = new ListNode(-1, head);
+
         ListNode start = dummy;
         ListNode end = dummy;
+
 
         while (end.next != null) {
 
             for (int i = 0; i < k && end != null; i++) {
                 end = end.next;
             }
+
             if (end == null) {
                 break;
             }
 
-            ListNode pre = start.next;
-            ListNode post = end.next;
+            ListNode first = start.next;
+            ListNode last = end.next;
+
             end.next = null;
 
-            start.next = reverse(pre);
-            pre.next = post;
-
-            start = pre;
+            start.next = reverse(first);
+            first.next= last;
+            start = first;
             end = start;
-        }
 
+
+        }
         return dummy.next;
     }
 

@@ -5,6 +5,7 @@ import org.leetcode.ListNode;
 /**
  * @Author: shiwei10
  * @Date: 2024/9/14 19:37
+ * @Description: 25. K 个一组翻转链表
  */
 public class ReverseKGroupV2 {
     public static ListNode reverseKGroup(ListNode head, int k) {
@@ -43,7 +44,6 @@ public class ReverseKGroupV2 {
     public static ListNode reverse(ListNode head) {
         ListNode last = null;
         ListNode cur = head;
-
 
         while (cur != null) {
             ListNode temp = cur.next;
