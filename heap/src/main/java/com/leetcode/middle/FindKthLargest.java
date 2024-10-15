@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 /**
  * @Author: shiwei10
  * @Date: 2024/9/23 10:50
+ * @Description: 215. 数组中的第K个最大元素
  */
 public class FindKthLargest {
     public static int findKthLargest(int[] nums, int k) {
@@ -15,11 +16,17 @@ public class FindKthLargest {
             queue.add(num);
         }
 
-        for (int i = 0; i < k-1; i++) {
+        for (int i = 0; i < k - 1; i++) {
             queue.poll();
         }
 
         return queue.peek();
+    }
+
+    public int findKthLargestV2(int[] nums, int k) {
+
+
+        return 1;
     }
 
     public static void main(String[] args) {
@@ -27,4 +34,6 @@ public class FindKthLargest {
         int kthLargest = findKthLargest(input, 3);
         System.out.println(kthLargest);
     }
+
+
 }

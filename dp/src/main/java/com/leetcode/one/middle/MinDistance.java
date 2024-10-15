@@ -1,4 +1,4 @@
-package com.leetcode.middle;
+package com.leetcode.one.middle;
 
 /**
  * @Author: shiwei10

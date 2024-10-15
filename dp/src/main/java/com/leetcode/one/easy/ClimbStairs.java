@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.one.easy;
 
 /**
  * @Author: shiwei10
