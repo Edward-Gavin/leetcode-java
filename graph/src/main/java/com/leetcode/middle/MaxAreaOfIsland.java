@@ -6,7 +6,7 @@ package com.leetcode.middle;
  */
 public class MaxAreaOfIsland {
     /**
-     * 找到最大的岛屿面积，其中0为水，1为未访问过的岛屿，2为已经访问过的岛屿
+     * 找到最大的岛屿面积，其中0为海洋，1为未访问过的岛屿，2为已经访问过的岛屿
      * @param grid
      * @return
      */
