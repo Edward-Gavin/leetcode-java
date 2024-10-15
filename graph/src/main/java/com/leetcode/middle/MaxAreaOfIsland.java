@@ -3,6 +3,7 @@ package com.leetcode.middle;
 /**
  * @Author: shiwei10
  * @Date: 2024/10/15 11:13
+ * @Description: 695. 岛屿的最大面积
  */
 public class MaxAreaOfIsland {
     /**
