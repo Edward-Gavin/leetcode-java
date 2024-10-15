@@ -9,8 +9,6 @@ import org.leetcode.ListNode;
 public class KGroupReverse {
 
     public ListNode kReverse(ListNode head, int k) {
-
-
         ListNode dummy = new ListNode(-1, head);
         ListNode start = dummy;
         ListNode end = dummy;
