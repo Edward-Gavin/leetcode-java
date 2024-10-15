@@ -24,19 +24,19 @@ public class NumIslands {
     }
 
     public int dfs(char[][] grid, int r, int c) {
-        if (!judge(grid, r, c)) {
-            return 0;
-        }
-        if(grid[r][c] != '1'){
-            return 0;
-        }
-        grid[r][c] = '2';
-        return 1 + dfs(grid, r - 1, c) + dfs(grid, r + 1, c) + dfs(grid, r, c + 1) + dfs(grid, r, c - 1);
-    }
 
-    public boolean judge(char[][] grid, int r, int c ) {
-        int n = grid.length;
-        int m = grid[0].length;
-        return r < n && c < m && r >= 0 && c >= 0;
+        // 终止条件
+        if (c < 0 || r < 0 || r >= grid.length || c >= grid[0].length || grid[r][c] != '1') {
+            return 0;
+        }
+
+        // 标记访问过
+        grid[r][c] = '2';
+
+        return 1
+                + dfs(grid, r - 1, c)
+                + dfs(grid, r + 1, c)
+                + dfs(grid, r, c + 1)
+                + dfs(grid, r, c - 1);
     }
 }
