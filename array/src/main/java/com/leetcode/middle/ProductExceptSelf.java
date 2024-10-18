@@ -62,7 +62,6 @@ public class ProductExceptSelf {
     public int[] productExceptSelfV3(int[] nums) {
 
         int length = nums.length;
-
         int[] res = new int[length];
 
         int[] lr = new int[length];
