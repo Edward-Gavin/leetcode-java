@@ -41,7 +41,6 @@ public class MergeArray {
 
         List<int[]> res = new ArrayList<>();
 
-        //
         for (int[] interval : intervals) {
             int head = interval[0];
             int tail = interval[1];
