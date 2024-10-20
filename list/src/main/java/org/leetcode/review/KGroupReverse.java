@@ -35,7 +35,6 @@ public class KGroupReverse {
             start = first;
             end = start;
 
-
         }
         return dummy.next;
     }
