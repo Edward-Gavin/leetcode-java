@@ -7,10 +7,13 @@ import java.util.List;
 /**
  * @Author: shiwei10
  * @Date: 2024/4/29 16:18
- * @Description: 131
+ * @Description: 131. 分割回文串
  */
 public class Partition {
+    // 结果集
     List<List<String>> result = new ArrayList<>();
+
+    // 寻找的路径
     LinkedList<String> path = new LinkedList<>();
 
     public List<List<String>> partition(String s) {
@@ -19,6 +22,8 @@ public class Partition {
     }
 
     public void backTrack(String str, int startIndex) {
+
+        // 符合要求的结果加入到结果集
         if (startIndex >= str.length()) {
             result.add(new ArrayList<>(path));
             return ;
