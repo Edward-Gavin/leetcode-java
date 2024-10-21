@@ -31,6 +31,12 @@ public class GroupAnagram {
         return true;
     }
 
+    public static void main(String[] args) {
+        String[] str = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
+        List<List<String>> lists = new GroupAnagram().groupAnagramsV2(str);
+        System.out.println(lists);
+    }
+
     public List<List<String>> groupAnagrams(String[] strs) {
 
         List<List<String>> res = new ArrayList<>();
