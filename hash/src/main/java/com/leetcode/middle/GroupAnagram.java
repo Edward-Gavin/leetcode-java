@@ -7,6 +7,31 @@ import java.util.*;
  * @Date: 2024/9/18 17:35
  */
 public class GroupAnagram {
+    public static boolean isAnagram(String s, String t) {
+
+        int sLength = s.length();
+        int tLength = t.length();
+
+        if (sLength != tLength) {
+            return false;
+        }
+
+        int[] mapCount = new int[26];
+
+        for (int i = 0; i < sLength; i++) {
+            mapCount[s.charAt(i) - 'a'] += 1;
+            mapCount[t.charAt(i) - 'a'] -= 1;
+        }
+
+        for (int i : mapCount) {
+            if (i != 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public List<List<String>> groupAnagrams(String[] strs) {
 
         List<List<String>> res = new ArrayList<>();
@@ -56,30 +81,29 @@ public class GroupAnagram {
         return new ArrayList<>(hash.values());
     }
 
-    public static boolean isAnagram(String s, String t) {
+    public List<List<String>> groupAnagramsV2(String[] strs) {
+        Map<String, List<String>> map = new HashMap<>();
 
-        int sLength = s.length();
-        int tLength = t.length();
+        for (String str : strs) {
+            char[] chars = str.toCharArray();
+            Arrays.sort(chars);
 
-        if (sLength != tLength) {
-            return false;
-        }
+            String s = new String(chars);
 
-        int[] mapCount = new int[26];
-
-        for (int i = 0; i < sLength; i++) {
-            mapCount[s.charAt(i) - 'a'] += 1;
-            mapCount[t.charAt(i) - 'a'] -= 1;
-        }
-
-        for (int i : mapCount) {
-            if (i != 0) {
-                return false;
+            if (map.containsKey(s)) {
+                map.get(s).add(str);
+            } else {
+                ArrayList<String> r = new ArrayList<>();
+                r.add(str);
+                map.put(s, r);
             }
+
         }
 
-        return true;
+        return new ArrayList<>(map.values());
+
     }
+
 
 }
 
