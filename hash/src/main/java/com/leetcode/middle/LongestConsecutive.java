@@ -10,13 +10,17 @@ import java.util.HashSet;
 public class LongestConsecutive {
     public static int longestConsecutive(int[] nums) {
 
+        if (nums.length <= 1) {
+            return nums.length;
+        }
+
         // 去重
         HashSet<Integer> set = new HashSet<>();
         for (int num : nums) {
             set.add(num);
         }
 
-        int maxLength = 0;
+        int maxLength = Integer.MIN_VALUE;
         int length;
         for (Integer i : set) {
             int cur = i;
