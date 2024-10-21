@@ -16,7 +16,6 @@ public class GroupAnagram {
         if (sLength != tLength) {
             return false;
         }
-
         int[] mapCount = new int[26];
 
         for (int i = 0; i < sLength; i++) {
@@ -29,7 +28,6 @@ public class GroupAnagram {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -42,7 +40,6 @@ public class GroupAnagram {
             res.add(Arrays.asList(strs));
             return res;
         }
-
 
         for (String str : strs) {
             boolean flag = false;
@@ -61,7 +58,6 @@ public class GroupAnagram {
             }
         }
 
-
         Map<String, List<String>> hash = new HashMap<>();
 
         for (String str : strs) {
@@ -78,7 +74,6 @@ public class GroupAnagram {
                 hash.put(s, strings);
             }
         }
-
         return new ArrayList<>(hash.values());
     }
 
@@ -88,7 +83,6 @@ public class GroupAnagram {
         for (String str : strs) {
             char[] chars = str.toCharArray();
             Arrays.sort(chars);
-
             String s = new String(chars);
 
             if (map.containsKey(s)) {
@@ -98,13 +92,8 @@ public class GroupAnagram {
                 r.add(str);
                 map.put(s, r);
             }
-
         }
-
         return new ArrayList<>(map.values());
-
     }
-
-
 }
 
