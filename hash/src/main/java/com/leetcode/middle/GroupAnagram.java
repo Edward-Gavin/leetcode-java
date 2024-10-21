@@ -5,6 +5,7 @@ import java.util.*;
 /**
  * @Author: shiwei10
  * @Date: 2024/9/18 17:35
+ * @Description: 49. 字母异位词分组
  */
 public class GroupAnagram {
     public static boolean isAnagram(String s, String t) {
