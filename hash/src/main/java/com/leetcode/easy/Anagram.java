@@ -3,10 +3,13 @@ package com.leetcode.easy;
 /**
  * @Author: shiwei10
  * @Date: 2024/9/18 17:40
+ * @Description: 242. 有效的字母异位词
  */
 public class Anagram {
-
-
+    public static void main(String[] args) {
+        String s = "avb";
+        System.out.println(s.charAt(0));
+    }
 
     public boolean isAnagram(String s, String t) {
 
@@ -31,10 +34,5 @@ public class Anagram {
         }
 
         return true;
-    }
-
-    public static void main(String[] args) {
-        String s = "avb";
-        System.out.println(s.charAt(0));
     }
 }
