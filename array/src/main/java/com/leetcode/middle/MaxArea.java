@@ -3,6 +3,7 @@ package com.leetcode.middle;
 /**
  * @author: shiwei10
  * @create: 2024-09-16 19:42
+ * @Description: 11. 盛最多水的容器
  */
 public class MaxArea {
     public int maxArea(int[] height){
