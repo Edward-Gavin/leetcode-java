@@ -6,24 +6,21 @@ package com.leetcode.middle;
  * @Description: 11. 盛最多水的容器
  */
 public class MaxArea {
+    /**
+     * 暴力解
+     * @param height
+     * @return
+     */
     public int maxArea(int[] height){
-
         int res = 0;
-
         int length = height.length;
-
         for (int i = 0; i < length; i++) {
-
             for (int j = i+1; j < length; j++) {
-
                 int high = Math.min(height[i], height[j]);
                 int len = j - i;
-
                 res = Math.max(res, high * len);
             }
-
         }
-
         return res;
     }
 
@@ -45,12 +42,8 @@ public class MaxArea {
                 j--;
             }
 
-
             res = Math.max(res, s);
-
         }
-
-
         return res;
     }
 
