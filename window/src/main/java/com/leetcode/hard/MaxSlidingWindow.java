@@ -98,7 +98,12 @@ public class MaxSlidingWindow {
         return res;
     }
 
-    // 单调队列
+    /**
+     * 单调队列
+     * @param nums
+     * @param k
+     * @return
+     */
     public int[] maxSlidingWindowV3(int[] nums, int k) {
         LinkedList<Integer> queue = new LinkedList<>();
 
@@ -108,7 +113,7 @@ public class MaxSlidingWindow {
         // 形成窗口
         for (int i = 0; i < k; i++) {
             while (!queue.isEmpty() && queue.peekLast() < nums[i]) {
-                queue.pollLast();
+                queue.removeLast();
             }
             queue.addLast(nums[i]);
         }
