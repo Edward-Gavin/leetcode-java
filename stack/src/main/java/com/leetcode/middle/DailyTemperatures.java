@@ -28,7 +28,6 @@ public class DailyTemperatures {
         return res;
     }
 
-
     /**
      * 栈
      *
