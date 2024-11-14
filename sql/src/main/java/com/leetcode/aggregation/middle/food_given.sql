@@ -18,4 +18,30 @@ insert into Delivery (delivery_id, customer_id, order_date, customer_pref_delive
                                                                                                  '2019-08-11', '2019-08-13');
 insert into Delivery (delivery_id, customer_id, order_date, customer_pref_delivery_date) values ('7', '4',
                                                                                                  '2019-08-09', '2019-08-09');
+                                                                                                 
+select
+    round(sum(instance_order) / count(instance_order), 2)* 100 as immediate_percentage
+from(
+    select
+        if(min(order_date)=customer_pref_delivery_date, 1, 0 ) as instance_order
+    from
+        Delivery
+    group by
+        customer_id
+    ) as t;
 
+
+select
+    round(sum(order_date = customer_pref_delivery_date) * 100 / count(*), 2) as immediate_percentage
+from
+    Delivery
+where
+    (customer_id, order_date)
+    in (
+        select
+            customer_id, min(order_date)
+        from
+            Delivery
+        group by
+            customer_id
+)
