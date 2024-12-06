@@ -1,18 +1,19 @@
-package com.leetcode.middle;
+package com.leetcode.review;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @Author: shiwei10
- * @Date: 2024/9/18 19:43
+ * @Date: 2024/12/6 17:10
  */
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
 
-        Map<Integer, Integer> hash = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> hash = new HashMap<>();
 
-        for (int i = 0; i < nums.length; i++) {
+        int length = nums.length;
+
+        for (int i = 0; i < length; i++) {
 
             int temp = target - nums[i];
 
