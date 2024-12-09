@@ -28,6 +28,7 @@ public class MinDistance {
             dp[0][i] = i;
         }
 
+        // dp[i][j] 表示word1 中的 i-1 转换成 word2 中的 j-1的最小操作数
         for (int i = 1; i <= len1; i++) {
             for (int j = 1; j <= len2; j++) {
                 if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
