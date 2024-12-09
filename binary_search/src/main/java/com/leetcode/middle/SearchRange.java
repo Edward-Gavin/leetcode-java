@@ -23,7 +23,6 @@ public class SearchRange {
                 left--;
             }
 
-
             // 找最大位置
             while (right < length && nums[right] == target) {
                 right++;
@@ -32,23 +31,16 @@ public class SearchRange {
             return new int[]{left + 1, right - 1};
 
         }
-
-
     }
 
     public static int binarySearch(int[] nums, int target) {
 
-
         int length = nums.length;
-
         int left = 0;
         int right = length;
 
-
         while (left < right) {
-
             int mid = (left + right) >> 1;
-
             if (nums[mid] == target) {
                 return mid;
             } else if (nums[mid] > target) {
@@ -56,11 +48,7 @@ public class SearchRange {
             } else {
                 left = mid + 1;
             }
-
-
         }
-
-
         return -1;
     }
 }

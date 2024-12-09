@@ -79,6 +79,5 @@ public class ReverseI {
             cur = temp;
         }
         return last;
-
     }
 }
