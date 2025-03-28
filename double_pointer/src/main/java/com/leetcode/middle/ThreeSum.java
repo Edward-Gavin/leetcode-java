@@ -7,10 +7,9 @@ import java.util.List;
 /**
  * @Author: shiwei10
  * @Date: 2024/9/19 11:39
- * @Description: 三数之和
+ * @Description: 15. 三数之和
  */
 public class ThreeSum {
-
     /**
      * @param nums the input array
      * @return return collection of result list.
@@ -20,7 +19,6 @@ public class ThreeSum {
         Arrays.sort(nums);
 
         int length = nums.length;
-
 
         // 固定一个数，依次双指针来遍历其他的数字
         for (int i = 0; i < length; i++) {
@@ -71,7 +69,7 @@ public class ThreeSum {
     }
 
     public static void main(String[] args) {
-        int[] input = new int[]{-1,0,1,2,-1,-4};
+        int[] input = new int[]{-1, 0, 1, 2, -1, -4};
         List<List<Integer>> result = ThreeSum.threeSum(input);
         for (List<Integer> list : result) {
             System.out.println(list);
