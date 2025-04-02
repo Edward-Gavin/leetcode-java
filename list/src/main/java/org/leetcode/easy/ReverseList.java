@@ -20,4 +20,24 @@ public class ReverseList {
         }
         return last;
     }
+
+    public static void main(String[] args) {
+        ListNode common = new ListNode(8);
+        ListNode l1 = new ListNode(4);
+        ListNode l2 = new ListNode(5);
+        common.next = l1;
+        l1.next = l2;
+
+        ListNode head1 = new ListNode(4);
+        ListNode n1 = new ListNode(1);
+        head1.next = n1;
+        n1.next = common;
+
+        ListNode listNode = new ReverseList().reverseList(head1);
+        while(listNode != null){
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+
+        }
+    }
 }
