@@ -8,6 +8,9 @@ package com.leetcode.easy;
 public class Anagram {
     public static void main(String[] args) {
         String s = "avb";
+        String s1 = "vab";
+        boolean anagram = new Anagram().isAnagram(s, s1);
+        System.out.println(anagram);
         System.out.println(s.charAt(0));
     }
 
