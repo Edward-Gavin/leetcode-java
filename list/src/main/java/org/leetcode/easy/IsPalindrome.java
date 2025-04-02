@@ -7,6 +7,7 @@ import java.util.Stack;
 /**
  * @author: shiwei10
  * @create: 2024-09-15 09:20
+ * @description: 234. 回文链表
  */
 public class IsPalindrome {
     public static boolean isPalindrome(ListNode head) {
