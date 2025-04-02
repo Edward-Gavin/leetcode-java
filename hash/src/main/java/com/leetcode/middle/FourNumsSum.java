@@ -35,6 +35,12 @@ public class FourNumsSum {
     }
 
     public static void main(String[] args) {
+        int[] nums1 = new int[]{1, 2};
+        int[] nums2 = new int[]{-2, -1};
+        int[] nums3 = new int[]{-1, 2};
+        int[] nums4 = new int[]{0, 2};
 
+        int i = fourNumsSum(nums1, nums2, nums3, nums4);
+        System.out.println(i);
     }
 }
